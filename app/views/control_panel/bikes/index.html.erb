@@ -1,0 +1,28 @@
+<h1>Bikes</h1>
+<br>
+  <%= link_to 'Add Bike', new_control_panel_bike_path, class: 'btn btn-success'%>
+<br>
+<br>
+<table class="table table-striped table-hover">
+  <tr>
+    <th></th>
+    <th>id</th>
+    <th>Brand</th>
+    <th>Status</th>
+    <th>Size</th>
+    <th>Actions</th>
+  </tr>
+  <%- @bikes.each do |bike| %>
+    <tr>
+      <td><%= check_box_tag 'bike_ids[]', bike.id %></td>
+      <td><%= bike.id %></td>
+      <td><%= bike.brand %></td>
+      <td><%= bike.status %></td>
+      <td><%= bike.size %></td>
+      <td>
+        <%= link_to 'Delete', control_panel_bike_path(bike), method: :delete, class: 'btn btn-danger' %>
+        <%= link_to 'Edit', edit_control_panel_bike_path(bike), class: 'btn btn-primary' %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,28 @@
+<%= form_for [:control_panel, @bike] do |f| %>
+
+  <div>
+    <%= f.label :brand, 'Brand'%>
+    <div>
+      <%= f.text_field :brand, autofocus: true%>
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :status, 'Status' %>
+    <div>
+      <%= f.select :status, Bike.statuses.map { |key, value| [key, key] }%>
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :size, 'Size'%>
+    <div>
+      <%= f.select :size, Bike.sizes.map { |key, value| [key, key] } %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.submit @bike.new_record? ? "Save" : "Update" %>
+    <%= link_to 'Back', control_panel_bikes_path%>
+  </div>
+<% end %>

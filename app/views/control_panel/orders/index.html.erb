@@ -1,0 +1,25 @@
+<div class='container'>
+  <h1 class='text-center'>Orders</h1>
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Order id</th>
+      <th>User email</th>
+      <!-- <th>Czas</th> -->
+      <th>Bike id</th>
+      <th>Ordered at</th>
+      <th>Actions</th>
+    </tr>
+    <%- @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.user.email %></td>
+        <!-- TODO: Display time for human (user decorator here) -->
+        <!-- <td><%= order.formatted_time %></td> -->
+        <td><%= order.bike.id %></td>
+        <!-- <td><%= order.formatted_created_at %></td> -->
+        <td><%= order.created_at %></td>
+        <td><%= link_to 'Return', control_panel_order_path(order), method: :delete, class: 'btn btn-danger'%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
