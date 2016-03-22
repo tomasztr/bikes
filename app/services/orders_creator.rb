@@ -18,7 +18,7 @@ class OrdersCreator
       bikes = Bike.find(params[:bike_ids])
       ActiveRecord::Base.transaction do
         bikes.each do |bike|
-          fail unless bike.available?
+          fail if bike.unavailable?
           current_user.orders.create!(bike: bike, time: params[:time])
           bike.unavailable!
         end
