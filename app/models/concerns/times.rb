@@ -20,5 +20,5 @@ module Times
     { key: '2 tydzien' , value: 60*60*24*7*2 },
     { key: '3 tydzien' , value: 60*60*24*7*3 },
     { key: '1 miesiac' , value: 60*60*24*7*4 },
-  ]
+  ].freeze
 end

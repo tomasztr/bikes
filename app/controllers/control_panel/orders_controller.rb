@@ -1,7 +1,7 @@
 class ControlPanel::OrdersController < ControlPanel::ControlPanelController
 
   def index
-    @orders = Order.all
+    @orders = OrderDecorator.decorate_collection(Order.all)
   end
 
   def create

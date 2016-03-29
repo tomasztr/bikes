@@ -1,4 +1,6 @@
 class Bike < ActiveRecord::Base
+  include Times
+  
   has_many :users, through: :orders
   has_many :orders
   

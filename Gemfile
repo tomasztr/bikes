@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'devise'
-gem 'pry'
+gem 'draper'
 # Library with styles and js gem 'bootstrap-sass', '3.3.3'
 gem 'bootstrap-sass', '3.3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
